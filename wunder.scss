@@ -1,7 +1,6 @@
-$primary: #3498db;
-$secondary: #2980b9;
+$primary: #52a097;
+$secondary: #397b86;
 $smoke: #ecf0f1;
-$time: .9s;
 
 * {
     box-sizing: border-box;
@@ -19,87 +18,30 @@ span {
     white-space: nowrap;
 }
 .slide1 {
-    transition: background-color $time $time*5;
-    background-color: $smoke;
-
-    &.on {
-        background-color: $secondary;
-    }
+    background-image: linear-gradient( 135deg, #92FFC0 0%, #002661 100%);
+}
+.slide2 {
+    padding-top: 50px;
 }
 h1 {
     font-family: "Crimson Text", serif;
     position: fixed;
     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: inline-block;
     text-align: center;
     color: white;
     font-size: 80px;
     font-weight: 400;
     text-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
-    padding: 20px 50px 30px;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    transition: 
-        text-shadow $time $time*4,
-        background-color $time $time*5,
-        border-radius $time $time*6,
-        box-shadow $time $time*6,
-        font-size $time $time*6;
-    background-color: transparent;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     margin: 0;
-
-    &.on {
-        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
-        background-color: $primary;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-        font-size: 90px;
-        border-radius: 15px;
-    }
-
-    &:before, &:after {
-        display: block;
-        content: "";
-        position: absolute;
-    }
-    &:before {
-        border-top: 1px solid transparent;
-        border-right: 1px solid transparent;
-        top: 0;
-        left: 0;
-        right: 100%;
-        bottom: 100%;
-        transition: 
-            right $time,
-            bottom $time $time,
-            border-radius $time $time*6;
-    }
-    &:after {
-        border-bottom: 1px solid transparent;
-        border-left: 1px solid transparent;
-        right: 0;
-        bottom: 0;
-        top: 100%;
-        left: 100%;
-        transition: 
-            border-color 0s $time*2,
-            left $time $time*2,
-            top $time $time*3,
-            border-radius $time $time*6;
-    }
-    &.on:before, &.on:after {
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        border-color: $primary;
-        border-radius: 15px;
-    }
+    padding: 0 0 30px;
 }
 
 section {
     padding: 30px 0;
-    background: white;
+    background: $smoke;
     position: relative;
     &:last-of-type {
         background: $primary;
@@ -143,7 +85,7 @@ h3 {
     }
 }
 .card {
-    background: white;
+    background: $smoke;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     transition: all .3s ease-in-out;
     &:hover {
@@ -161,7 +103,6 @@ h3 {
 img {
     width: 100%;
 }
-
 .split {
     background: linear-gradient(70deg, $primary 50%, $secondary 50%);
     text-align: center;

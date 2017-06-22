@@ -1,61 +1,7 @@
-$(document).ready(function() {
-    $(window).resize();
-    $(window).scroll();
-
+function turnEverythingOn() {
     $("h1").addClass("on");
     $(".slide1").addClass("on");
-});
-
-$(window).resize(function() {
-    $(".slide1").css("height", $(window).height() + "px");
-});
-
-$(window).scroll(function() {
-    /*
-    $(".slide1").slideBackgroundColor({
-        topColor: "#ecf0f1",
-        bottomColor: "16a085",
-        endChange: 300
-    });
-    */
-    if($(".row.one").isOnScreen(200)){
-        setTimeout(function(){
-            $(".col.one").removeClass("hidden");
-        }, 200);
-        setTimeout(function(){
-            $(".col.two").removeClass("hidden");
-        }, 800);
-        setTimeout(function(){
-            $(".col.three").removeClass("hidden");
-        }, 1400);
-    }
-
-    if($(".row.two").isOnScreen(200)){
-        setTimeout(function(){
-            $(".col.four").removeClass("hidden");
-        }, 200);
-        setTimeout(function(){
-            $(".col.five").removeClass("hidden");
-        }, 800);
-        setTimeout(function(){
-            $(".col.six").removeClass("hidden");
-        }, 1400);
-    }
-});
-
-(function( $ ){
-    $.fn.isOnScreen = function( fromBottom ) {
-        /*var settings = $.extend({
-            fromBottom: 0
-        }, options );*/
-        if(fromBottom === undefined)
-            fromBottom = 0;
-
-        if(this.offset().top > $(window).scrollTop() && this.offset().top + fromBottom < $(window).scrollTop() + $(window).height())
-            return true;
-        return false;
-    };
-}( jQuery ));
+}
 
 (function( $ ){
 
